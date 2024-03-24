@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package services;
+option go_package="./services";
+
+service Chat {
+    rpc ClientChat(stream ClientChatRequest) returns (stream ClientChatResponse);
+    rpc OwnerChat(stream OwnerChatRequest) returns (stream OwnerChatResponse);
+}
+
+message ClientChatRequest {
+    string message = 1;
+    google.protobuf.Timestamp event_timestamp = 2;
+}
+
+message ClientChatResponse {
+    string message = 1;
+    google.protobuf.Timestamp event_timestamp = 2;
+}
+
+message OwnerChatRequest {
+    uint64 chat_id = 1;
+    string message = 2;
+    google.protobuf.Timestamp event_timestamp = 3;
+}
+
+message OwnerChatResponse {
+    uint64 chat_id = 1;
+    string message = 2;
+    google.protobuf.Timestamp event_timestamp = 3;
+}
