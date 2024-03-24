@@ -1,5 +1,3 @@
 server/src/*
 server/client.properties
-server/client.go
-server/owner.go
 kafka/
