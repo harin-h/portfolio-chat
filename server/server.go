@@ -31,7 +31,7 @@ func main() {
 	// environment variable
 
 	// get port of server
-	port := flag.String("PORT", ":50051", "Port")
+	port := flag.String("PORT", "0.0.0.0:50051", "Port")
 	flag.Parse()
 
 	// get redis url
