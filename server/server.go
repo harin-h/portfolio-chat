@@ -126,7 +126,7 @@ func main() {
 
 	// controller server down
 	go func() {
-		time.Sleep(time.Minute)
+		time.Sleep(time.Hour)
 		s.Stop()
 	}()
 
